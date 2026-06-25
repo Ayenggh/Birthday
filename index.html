@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, Ate Nher</title>
+    <!-- Fixed font source domains to load fonts correctly -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- INTERACTIVE TOUCH ACTUATOR: Required to bypass mobile auto-play music blocks -->
+    <div id="audio-gate" class="gate-overlay" onclick="unlockCakeAndMusic()">
+        <div class="gate-content">
+            <p class="gate-title">A Special Surprise for Ate Nher ✨</p>
+            <p class="gate-sub">tap anywhere to enter ♡</p>
+        </div>
+    </div>
+
+    <!-- SCREEN 1: THE CAKE REVEAL -->
+    <div id="intro-screen" class="screen full-viewport">
+        <h1>Happy Birthday,<br>Ate Nher</h1>
+        <p class="subtitle">Twenty–eight looks good on you — always has.</p>
+        
+        <div class="cake-container">
+            <div class="candles-row">
+                <div class="candle"><div class="flame"></div></div>
+                <div class="candle"><div class="flame"></div></div>
+                <div class="candle"><div class="flame"></div></div>
+            </div>
+            <div class="cake-layer top-layer"></div>
+            <div class="cake-layer mid-layer"></div>
+            <div class="cake-layer base-layer"></div>
+        </div>
+        
+        <button class="btn-outline" onclick="revealSurprise()">
+            <span>✨</span> Open your surprise
+        </button>
+        <p class="hint-text">tap when you're ready ♡</p>
+    </div>
+
+    <!-- SCREEN 2: DEDICATED FULL-SCREEN SCROLL TIMELINE -->
+    <div id="content-screen">
+        <!-- ROW 1 -->
+        <div class="timeline-row full-viewport">
+            <div class="blob-frame blob-1">
+                <img src="photos/6508ab65-4c2f-4cc6-955d-5b069c027430.jfif" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                <div class="img-placeholder" style="display:none;">[ Photo 1 ]</div>
+            </div>
+            <div class="text-block">
+                <p class="text-main">Ang nag-una sa tanan,boss sa balay.</p>
+                <p class="text-sub">28 years ago</p>
+            </div>
+        </div>
+
+        <!-- ROW 2 -->
+        <div class="timeline-row full-viewport reverse">
+            <div class="blob-frame blob-2">
+                <img src="photos/78f4dda2-be30-4741-b81e-6961840692af.jfif" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                <div class="img-placeholder" style="display:none;">[ Photo 2 ]</div>
+            </div>
+            <div class="text-block">
+                <p class="text-main">Always loud, always dramatic, always my favorite person nga chikahan</p>
+                <p class="text-sub">My Best Friend</p>
+            </div>
+        </div>
+
+        <!-- ROW 3 -->
+        <div class="timeline-row full-viewport">
+            <div class="blob-frame blob-3">
+                <img src="photos/fe90460e-4c3d-40c0-b7f2-7bf802eaa02c.jfif" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                <div class="img-placeholder" style="display:none;">[ Photo 3 ]</div>
+            </div>
+            <div class="text-block">
+                <p class="text-main">My ride or die, human ATM, ug ang rason why I am what I am now</p>
+                <p class="text-sub">My Original Partner in Crime</p>
+            </div>
+        </div>
+
+        <!-- ROW 4 -->
+        <div class="timeline-row full-viewport reverse">
+            <div class="blob-frame blob-4">
+                <img src="photos/6a439260-300a-4153-8d23-79f012b48e7c.jfif" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                <div class="img-placeholder" style="display:none;">[ Photo 4 ]</div>
+            </div>
+            <div class="text-block">
+                <p class="text-main">Ikaw among pinaka solid foundation, our guiding light
+                    and the one who held us all together, sobra ka namo na appreciate
+                </p>
+                <p class="text-sub">My Backbone</p>
+            </div>
+        </div>
+
+        <!-- ROW 5 -->
+        <div class="timeline-row full-viewport">
+            <div class="blob-frame blob-5">
+                <img src="photos/48c9e0a6-9ccc-47dc-a63a-2abbd9e60e5e.jfif" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                <div class="img-placeholder" style="display:none;">[ Photo 5 ]</div>
+            </div>
+            <div class="text-block">
+                <p class="text-main">My living inspiration. I watched you fight battles alone, I watched you stand tall when you were tired, I watched you recharge silently just to keep going and I look up to you more than anyone in this world.</p>
+                <p class="text-sub">My Greatest Hero</p>
+            </div>
+        </div>
+
+        <!-- ROW 6 -->
+        <div class="timeline-row full-viewport reverse">
+            <div class="blob-frame blob-6">
+                <img src="photos/5b1003b6-ff39-49e6-8281-011b83e4ca66.jfif" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                <div class="img-placeholder" style="display:none;">[ Photo 6 ]</div>
+            </div>
+            <div class="text-block">
+                <p class="text-main">My reason to hope. I know better days are coming for you. HAPPY BIRTHDAY, ATEE! YOU DESERVE ALL THE HAPPINESS IN THE WORLD!!</p>
+                <p class="text-sub">My Everything</p>
+            </div>
+        </div>
+
+        <!-- TRANSITION FOOTER SCREEN -->
+        <div class="timeline-row full-viewport cta-block">
+            <div class="closing-quote">
+                “Here’s to the woman you’re becoming and every beautiful thing still coming.”
+            </div>
+            <p class="text-sub" style="margin-bottom: 35px;">for the best sister ever, always</p>
+            
+            <button class="btn-outline" onclick="revealLetter()">
+                <span>💌</span> Open your letter
+            </button>
+            <p class="hint-text">click to read ♡</p>
+        </div>
+    </div>
+
+    <!-- SCREEN 3: VINTAGE LETTER STAGE WITH INTERACTIVE FINAL WISH -->
+    <div id="letter-screen" class="full-viewport">
+        <div class="letter-paper">
+            <div class="letter-date" id="currentDate">June 2026</div>
+            <div class="letter-text" id="typedMessage"></div>
+            
+            <div id="wishContainer" class="wish-section">
+                <p class="wish-instruction">Close your eyes, make a wish for your 28th year, and tap the flame to blow it out.</p>
+                <div class="wish-candle-box" onclick="blowOutCandle()">
+                    <div id="wishFlame" class="final-flame"></div>
+                    <div class="final-candle"></div>
+                </div>
+            </div>
+
+            <div id="finalBlessing" class="blessing-box">
+                <h3>May all your wishes come true, Ate. ✨</h3>
+                <p>Now close your phone and go to the kitchen for a real birthday present!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- HAPPY BIRTHDAY TRACK (Plays during Cake and Timeline) -->
+    <audio id="bgMusic" loop src="videos/Happy Birthday To You - THE KIBOOMERS Birthday Party Song for Kids [90w2RegGf9w].mp3"></audio>
+    
+    <!-- SOFT INSTRUMENTAL TRACK (Plays during Letter reading) -->
+    <audio id="letterMusic" loop src="videos/Iingatan Ka by Carol Banawa synthesia piano tutorial + sheet music [Bygf0h3k1VY].mp3"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
